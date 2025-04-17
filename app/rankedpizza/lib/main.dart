@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
-import 'home.dart'; // Importando HomePage
+import 'home.dart'; 
 
 void main() {
-  runApp(MyApp()); // Remova o 'const' aqui
+  runApp(MyApp()); 
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key}); // Construtor sem 'const'
+  MyApp({super.key}); 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Ranked Pizza',
       theme: ThemeData(primarySwatch: Colors.red),
-      home:  HomePage(), // 'HomePage' pode manter 'const' se o construtor dela for const
+      home:  HomePage(),
     );
   }
 }

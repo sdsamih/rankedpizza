@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 const String baseUrl =
-    'http://192.168.100.31:5000'; // emulador Android no localhost
+    'http://192.168.100.31:5000'; // Ip/dominio da api
 
 Future<String?> criarRodizio(String name) async {
   final response = await http.post(

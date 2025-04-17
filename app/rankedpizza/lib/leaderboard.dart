@@ -8,7 +8,7 @@ class LeaderboardPage extends StatefulWidget {
 
   const LeaderboardPage({
     super.key,
-    required this.code,
+    required this.code, //Precisa do code e username, passados pelo join
     required this.username,
   });
 
@@ -73,3 +73,5 @@ class _LeaderboardPageState extends State<LeaderboardPage> {
     );
   }
 }
+
+//NP3PFZ

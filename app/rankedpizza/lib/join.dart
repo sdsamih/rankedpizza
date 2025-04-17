@@ -29,8 +29,8 @@ class _JoinPageState extends State<JoinPage> {
         body: jsonEncode({'username': username}),
       );
 
-      debugPrint('Status Code: ${response.statusCode}');
-      debugPrint('Response Body: ${response.body}');
+      //debugPrint('Status Code: ${response.statusCode}');
+      //debugPrint('Response Body: ${response.body}');
 
       if (response.statusCode == 200) {
         Navigator.push(
@@ -83,3 +83,5 @@ class _JoinPageState extends State<JoinPage> {
     );
   }
 }
+
+//NP3PFZ 

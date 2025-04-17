@@ -18,12 +18,16 @@ class _HomePageState extends State<HomePage> {
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             TextField(
-              controller: nameController,
+              controller:
+                  nameController, // Campo para colocar o nome do rodízio
               decoration: InputDecoration(labelText: 'Nome do rodízio'),
             ),
+            const SizedBox(height: 12),
             ElevatedButton(
+              // Botão para criar rodízio
               onPressed: () async {
                 final code = await criarRodizio(nameController.text);
                 setState(() {
@@ -32,25 +36,32 @@ class _HomePageState extends State<HomePage> {
               },
               child: Text('Criar'),
             ),
-            if (codigoCriado != null)
-              Column(
-                children: [
-                  Text('Código: $codigoCriado'),
-                  ElevatedButton(
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => JoinPage(
-                            code: codigoCriado!, // Passando o código correto
-                          ),
+            const SizedBox(height: 20),
+            //botão de entrar
+            ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder:
+                        (_) => JoinPage(
+                          code:
+                              codigoCriado ??
+                              '', // Se nenhum código foi criado, passa string vazia
                         ),
-                      );
-                    },
-                    child: Text('Entrar'),
                   ),
-                ],
+                );
+              },
+              child: Text('Entrar em Rodízio'),
+            ),
+            const SizedBox(height: 16),
+            // Exibe o código criado, se existir
+            if (codigoCriado != null) ...[
+              Text(
+                'Código: $codigoCriado',
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
+            ],
           ],
         ),
       ),
